@@ -3,6 +3,9 @@
 require 'mail'
 
 
+
+target_address = 'aardace@gmail.com'
+# target_address = 'tell_the_mayor@mail.com'
 # Sending via GMail
 Mail.defaults do
   delivery_method :smtp, { :address              => "smtp.gmail.com",
@@ -16,7 +19,7 @@ end
 
 mail = Mail.new do
   from     'me@test.lindsaar.net'
-  to       'aardace@gmail.com'
+  to       target_address
   subject  'Here is the image you wanted'
   body     File.read('body.txt')
   add_file :filename => 'somefile.png', :content => File.read('./somefile.png')
