@@ -16,26 +16,38 @@ require 'mail'
 
 # puts "hi"
 # puts mail.to_s
-Mail.defaults do
-  delivery_method :smtp, address: "localhost", port: 1025
-end
+# Mail.defaults do
+#   delivery_method :smtp, address: "localhost", port: 1025
+# end
 
 # Sending via GMail
+
+# Mail.defaults do
+#   delivery_method :smtp, { :address              => "smtp.gmail.com",
+#                            :port                 => 587,
+#                            :domain               => 'your.host.name',
+#                            :user_name            => '<username>',
+#                            :password             => '<password>',
+#                            :authentication       => 'plain',
+#                            :enable_starttls_auto => true  }
+# end
 
 Mail.defaults do
   delivery_method :smtp, { :address              => "smtp.gmail.com",
                            :port                 => 587,
                            :domain               => 'your.host.name',
-                           :user_name            => '<username>',
-                           :password             => '<password>',
+                           :user_name            => 'tellyourmayor@gmail.com',
+                           :password             => '9I7QkPiS',
                            :authentication       => 'plain',
                            :enable_starttls_auto => true  }
 end
 
 
+
+
 mail = Mail.new do
   from     'me@test.lindsaar.net'
-  to       'you@test.lindsaar.net'
+  to       'aardace@gmail.com'
   subject  'Here is the image you wanted'
   body     File.read('body.txt')
   # add_file :filename => 'somefile.png', :content => File.read('./somefile.png')
