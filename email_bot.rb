@@ -50,7 +50,7 @@ mail = Mail.new do
   to       'aardace@gmail.com'
   subject  'Here is the image you wanted'
   body     File.read('body.txt')
-  # add_file :filename => 'somefile.png', :content => File.read('./somefile.png')
+  add_file :filename => 'somefile.png', :content => File.read('./somefile.png')
 end
 
 # mail.delivery_method :sendmail
